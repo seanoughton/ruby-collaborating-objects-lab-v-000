@@ -8,7 +8,8 @@ class MP3Importer
     end
 
     #files gets called by #import and returns an array
-    #files
+    #files turns the files paths into a string
+    #then removes the directory part of the string
     def files
       @files = Dir.glob("#{@path}/*.mp3").collect{ |f| f.gsub("#{@path}/", "") }
     end
@@ -17,6 +18,7 @@ class MP3Importer
       #which creates a new song instance for each of the filenames
     # #import calls #files
     #so it is calling the method on the MP3Importer instance
+    # #import is collaborating with Song instances by calling a Song method (new_by_filename) which creates a new song for every item in the array
     def import
       self.files.each{|f| Song.new_by_filename(f)}
     end
