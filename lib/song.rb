@@ -19,6 +19,8 @@ class Song
 
   #this is a setter method, a writer,
   #it sets the artist attribute of the song instance equal to an artist instance (rather than just a string)
+  #it calls a Class Method in Artist, that returns an artist object
+  #the find_or_create_by_name either finds an existing artist and returns it, or creates a new object and returns it
   def artist_name=(name)
     self.artist = Artist.find_or_create_by_name(name)
     artist.add_song(self)
