@@ -34,9 +34,6 @@ class Artist
     end
   end
 
-  #def self.find_or_create_by_name(name)
-    #self.find(name) ? self.find(name) : self.create(name)
-  #end
 
   def self.find(name)
     @@all.find do |artist|
@@ -44,19 +41,13 @@ class Artist
     end
   end
 
-  #def self.find(name)
-    #self.all.find {|artist| artist.name == name }
-  #end
-
   def self.create(name)
     artist = self.new(name)
     @@all << artist
     artist
   end
 
-  #def self.create(name)
-    #self.new(name).tap {|artist| artist.save}
-  #end
+
 
   def save
     @@all << self
@@ -69,12 +60,3 @@ class Artist
   end
 
 end
-
-#def self.find_or_create_by_name(artist_name)
-  #if !(@@all.find {|x|x.name == artist_name})
-    #artist = self.new(artist_name) #creates a new artist instance
-    #@@all << artist #adds the artist instance to @all
-  #else
-    #(@@all.find {|x|x.name == artist_name})
-  #end
-#end
