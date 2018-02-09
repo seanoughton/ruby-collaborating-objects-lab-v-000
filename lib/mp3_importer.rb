@@ -12,8 +12,8 @@ class MP3Importer
     end
 
     # #import takes each normalized filename and sends it to the Song class #new_by_filename
-    #which creates a new song instance for each of the filenames
-    #this method takes the return of the files method, so it calls the files method
+      #which creates a new song instance for each of the filenames
+    # #import calls the files method
     #so it is calling the method on the MP3Importer instance
     def import
       self.files.each{|f| Song.new_by_filename(f)}
