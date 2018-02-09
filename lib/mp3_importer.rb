@@ -16,7 +16,7 @@ class MP3Importer
     #which creates a new song instance for each of the filenames
     #this method takes the return of the files method, so it calls the files method
     def import
-      files.each{|f| Song.new_by_filename(f)}
+      self.files.each{|f| Song.new_by_filename(f)}
     end
 
 
