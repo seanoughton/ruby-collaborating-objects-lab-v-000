@@ -9,7 +9,7 @@ class Artist
     @songs = [] #array of songs for each instance
   end
 
-
+  #this exposes the @@all Class Variable
   def self.all
     @@all
   end
