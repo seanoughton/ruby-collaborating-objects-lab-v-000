@@ -13,13 +13,13 @@ class Song
     #this is calling the #artist_name=
     #it is a writer method that assigns that variable to artist
     #you are not just assigning the string to artist, because you want the artist attribute to be an artist instance instead
-    song.artist_name(artist)
+    song.artist_name = artist
     song
   end
 
   #this is a setter method, a writer,
   #it sets the artist attribute of the song instance equal to an artist instance (rather than just a string)
-  def artist_name(name)
+  def artist_name=(name)
     self.artist = Artist.find_or_create_by_name(name)
     artist.add_song(self)
   end
