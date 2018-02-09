@@ -20,7 +20,7 @@ class MP3Importer
     #so it is calling the method on the MP3Importer instance
     # #import is collaborating with Song instances by calling a Song method (new_by_filename) which creates a new song for every item in the array
     def import
-      self.files.each{|f| Song.new_by_filename(f)}
+      self.files.each{|file| Song.new_by_filename(file)}
     end
 
 
